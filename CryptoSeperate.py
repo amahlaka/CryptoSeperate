@@ -15,9 +15,10 @@ ETH: 0xa34ad58c8213c2e473f2faf0ea521c59e9400915
 ZEC: t1PYTokShkUHCUv6oeqwwHizXbjj7UQnX5c
 """
 import os
-import errno
+
 
 def failure(code):
+    """Error handling."""
     if(code == 1):
         errormsg = "Could not find file wallets.txt"
         errormsg += "\nPlease check that file exists and try again"
@@ -27,6 +28,7 @@ def failure(code):
     print(errormsg)
     input("Press Enter to exit")
     exit()
+
 
 if(not os.path.isfile('wallets.txt')):
     failure(1)
